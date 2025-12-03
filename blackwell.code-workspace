@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/usr/local/cuda/include",
+			"name": "CUDA headers"
+		}
+	]
+}
