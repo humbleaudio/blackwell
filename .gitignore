@@ -1,0 +1,15 @@
+# sensible things for a CUDA project
+build/
+out/
+*.fatbin
+*.fatbin.c
+*.cubin
+*_dlink.reg.c
+*.cpp*.ii
+*.module_id
+*.ptx
+*.o
+*.cu.o
+*.cu.cpp
+*.cu.cpp.*
+*.cudafe1.*

@@ -7,5 +7,23 @@
 			"path": "/usr/local/cuda/include",
 			"name": "CUDA headers"
 		}
-	]
+	],
+	"settings": {
+		"files.exclude": {
+			"build/": true,
+			"out/": true,
+			"*.fatbin": true,
+			"*.fatbin.c": true,
+			"*.cubin": true,
+			"*_dlink.reg.c": true,
+			"*.cpp*.ii": true,
+			"*.module_id": true,
+			"*.ptx": true,
+			"*.o": true,
+			"*.cu.o": true,
+			"*.cu.cpp": true,
+			"*.cu.cpp.*": true,
+			"*.cudafe1.*": true
+		}
+	}
 }
