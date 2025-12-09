@@ -10,7 +10,8 @@ NVCC_FLAGS += --expt-relaxed-constexpr --expt-extended-lambda --use_fast_math -X
 # Use -gencode to specify both compute and code architectures
 # NVCC_FLAGS += -gencode arch=compute_90a,code=sm_90a
 # NVCC_FLAGS += -gencode arch=compute_100,code=sm_100
-NVCC_FLAGS += -gencode arch=compute_120,code=sm_120
+# NVCC_FLAGS += -gencode arch=compute_120,code=sm_120
+NVCC_FLAGS += -gencode arch=compute_100a,code=sm_100a
 
 NVCC_BASE = nvcc $(NVCC_FLAGS) $(NVCC_LDFLAGS) -lineinfo
 
@@ -26,6 +27,10 @@ matmul: matmul.cu
 
 matmulprofile: matmul
 	$(NCU_COMMAND) -o $@ -f $(OUT_DIR)/$^
+
+blackwell_matmul: blackwell_matmul_template.cuh
+	mkdir -p $(OUT_DIR)
+	$(NVCC_BASE) -x cu $^ $(CUDA_OUTPUT_FILE) --ptxas-options=-v -keep
 
 clean:
 	rm $(OUT_DIR)/*
